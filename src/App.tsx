@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { RecoilRoot } from 'recoil'
+
 import UserProfile from './header/UserProfile'
 import { User } from './models/User'
 import './App.css';
 import { UserContext } from './header/UserContext'
 import ProductView from './main/ProductView'
+import Calculator from './calc/Calculator'
 
 function App() {
 	const [maybeUser, setMaybeUser] = useState<null | User>(null)
@@ -17,6 +20,7 @@ function App() {
 	}
 
 	return (
+		<RecoilRoot>
 		<UserContext.Provider value={maybeUser}>
 		<div className="App">
 		<header>
@@ -25,8 +29,10 @@ function App() {
 		</div>
 		<main>
 			<ProductView />
+			<Calculator />
 		</main>
 		</UserContext.Provider>
+		</RecoilRoot>
 	);
 }
 
