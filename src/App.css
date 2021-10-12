@@ -1,7 +1,13 @@
+#root {
+	padding: 0em 2em;
+}
 .App {
-	padding: 1em;
 }
 
 header {
 	background: lightgray;
+}
+
+.product-view {
+	margin: 1em 0em;
 }
